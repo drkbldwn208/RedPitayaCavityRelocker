@@ -12,7 +12,6 @@
 *.runs/
 *.sim/
 *.gen/
-*.xpr
 
 
 pynq_overlays/*
