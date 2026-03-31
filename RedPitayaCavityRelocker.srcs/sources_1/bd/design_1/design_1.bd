@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x6ADD65967309656F",
+      "boundary_crc": "0x6ADD65969FD691A5",
       "device": "xc7z010clg400-1",
       "gen_directory": "../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -1481,9 +1481,9 @@
           "cavity_relocker_0/ap_rst_n"
         ]
       },
-      "xlconstant_0_dout": {
+      "processing_system7_0_FCLK_RESET0_N": {
         "ports": [
-          "xlconstant_0/dout",
+          "processing_system7_0/FCLK_RESET0_N",
           "proc_sys_reset_0/ext_reset_in"
         ]
       }
