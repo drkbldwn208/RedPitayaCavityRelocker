@@ -1,0 +1,62 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.579092",
+   "Default View_TopLeft":"-437,-1107",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.7.1 2023-07-26 3bc4126617 VDI=43 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 1610 -y -470 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1610 -y -450 -defaultsOSRD
+preplace port port-id_adc_enc_p_o -pg 1 -lvl 6 -x 1610 -y -550 -defaultsOSRD
+preplace port port-id_adc_clk_n_i -pg 1 -lvl 0 -x -310 -y -80 -defaultsOSRD
+preplace port port-id_adc_enc_n_o -pg 1 -lvl 6 -x 1610 -y -530 -defaultsOSRD
+preplace port port-id_adc_csn_o -pg 1 -lvl 6 -x 1610 -y -510 -defaultsOSRD
+preplace port port-id_adc_clk_p_i -pg 1 -lvl 0 -x -310 -y -510 -defaultsOSRD
+preplace port port-id_dac_clk_o -pg 1 -lvl 6 -x 1610 -y 10 -defaultsOSRD
+preplace port port-id_dac_rst_o -pg 1 -lvl 6 -x 1610 -y -610 -defaultsOSRD
+preplace port port-id_dac_sel_o -pg 1 -lvl 6 -x 1610 -y -590 -defaultsOSRD
+preplace port port-id_dac_wrt_o -pg 1 -lvl 6 -x 1610 -y -570 -defaultsOSRD
+preplace portBus adc_dat_a_i -pg 1 -lvl 0 -x -310 -y -550 -defaultsOSRD
+preplace portBus adc_dat_b_i -pg 1 -lvl 0 -x -310 -y -530 -defaultsOSRD
+preplace portBus dac_dat_o -pg 1 -lvl 6 -x 1610 -y 80 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 4 -x 930 -y -580 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 3 -x 470 -y -300 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x -160 -y 10 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 2 -x 150 -y -370 -defaultsOSRD
+preplace inst axis_red_pitaya_adc_0 -pg 1 -lvl 3 -x 470 -y -20 -defaultsOSRD
+preplace inst axis_red_pitaya_dac_0 -pg 1 -lvl 5 -x 1370 -y 40 -defaultsOSRD
+preplace inst cavity_relocker_0 -pg 1 -lvl 4 -x 930 -y 150 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 5 -x 1370 -y -1250 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 5 -x 1370 -y -990 -defaultsOSRD
+preplace netloc adc_clk_n_i_1 1 0 1 -290 -80n
+preplace netloc adc_clk_p_i_1 1 0 1 -280 -510n
+preplace netloc clk_wiz_0_locked 1 1 4 -40 -190 290J -190 700 0 1150
+preplace netloc clk_wiz_0_clk_out1 1 1 4 N -20 260J -200 690 -680 1210
+preplace netloc adc_dat_a_i_1 1 0 3 NJ -550 NJ -550 280
+preplace netloc adc_dat_b_i_1 1 0 3 NJ -530 NJ -530 230
+preplace netloc axis_red_pitaya_adc_0_adc_csn 1 3 3 NJ -10 1180 -440 1570
+preplace netloc clk_wiz_0_clk_out3 1 1 4 -40 60 NJ 60 NJ 60 NJ
+preplace netloc clk_wiz_0_clk_out2 1 1 4 -30J -100 NJ -100 680J 40 N
+preplace netloc axis_red_pitaya_dac_0_dac_clk 1 5 1 1550 0n
+preplace netloc axis_red_pitaya_dac_0_dac_rst 1 5 1 1540 -610n
+preplace netloc axis_red_pitaya_dac_0_dac_sel 1 5 1 1560 -590n
+preplace netloc axis_red_pitaya_dac_0_dac_wrt 1 5 1 1580 -570n
+preplace netloc axis_red_pitaya_dac_0_dac_dat 1 5 1 N 80
+preplace netloc xlconstant_0_dout 1 2 1 270J -370n
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 3 2 670 -930 1200
+preplace netloc processing_system7_0_DDR 1 4 2 1180 -470 N
+preplace netloc processing_system7_0_FIXED_IO 1 4 2 1160 -450 N
+preplace netloc axis_red_pitaya_adc_0_m_axis 1 3 1 650 -30n
+preplace netloc cavity_relocker_0_dac_out 1 4 1 1220 0n
+preplace netloc processing_system7_0_M_AXI_GP0 1 4 1 1150 -1310n
+preplace netloc ps7_0_axi_periph_M00_AXI 1 3 3 710 -60 NJ -60 1530
+preplace netloc cavity_relocker_0_m_axi_gmem 1 4 1 1170 -1050n
+preplace netloc axi_mem_intercon_M00_AXI 1 3 3 710 -1110 NJ -1110 1520
+levelinfo -pg 1 -310 -160 150 470 930 1370 1610
+pagesize -pg 1 -db -bbox -sgen -490 -1370 1780 240
+"
+}
+{
+   "da_axi4_cnt":"2",
+   "da_ps7_cnt":"1"
+}
