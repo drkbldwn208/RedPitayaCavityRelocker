@@ -1,0 +1,22 @@
+# Vivado log files and other junk
+*.log
+*.jou
+*.str
+.Xil/
+*.pb
+
+#Vivado generated folders
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.gen/
+*.xpr
+
+
+pynq_overlays/*
+
+!pynq_overlays/latest/
+
+*.aps
