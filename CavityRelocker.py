@@ -18,6 +18,7 @@ print("Allocating memory for sweep data...")
 sweep_buffer = allocate(shape=(31250000,), dtype='i4')
 
 relocker.register_map.pdh_waveform_1 = sweep_buffer.physical_address
+relocker.register_map.pdh_waveform_2 = sweep_buffer.physical_address >> 32
 
 print(f"Buffer allocated at physical address: {hex(sweep_buffer.physical_address)}")
 
