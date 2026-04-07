@@ -15,7 +15,7 @@ print(relocker.register_map)
 
 # HLS IP writes 31.25 M samples during the sweep, int data type, so 125 MB of DDR4
 print("Allocating memory for sweep data...")
-sweep_buffer = allocate(shape=(31250000,), dtype='i4')
+sweep_buffer = allocate(shape=(32768,), dtype='i4')
 
 relocker.register_map.pdh_waveform_1 = sweep_buffer.physical_address
 relocker.register_map.pdh_waveform_2 = sweep_buffer.physical_address >> 32
