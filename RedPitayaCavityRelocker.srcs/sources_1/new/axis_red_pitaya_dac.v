@@ -49,7 +49,7 @@ module axis_red_pitaya_dac #
       int_dat_a_reg <= {int_dat_a_wire[DAC_DATA_WIDTH-1], ~int_dat_a_wire[DAC_DATA_WIDTH-2:0]};
       int_dat_b_reg <= {int_dat_b_wire[DAC_DATA_WIDTH-1], ~int_dat_b_wire[DAC_DATA_WIDTH-2:0]};
     end
-    int_rst_reg <= {int_rst_reg[0], ~locked | ~s_axis_tvalid};
+    int_rst_reg <= {int_rst_reg[0], ~locked};
   end
 
   ODDR #(

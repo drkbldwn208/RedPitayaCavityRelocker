@@ -836,7 +836,7 @@
       },
       "cavity_relocker_0": {
         "vlnv": "xilinx.com:hls:cavity_relocker:1.0",
-        "ip_revision": "2114555230",
+        "ip_revision": "2114555314",
         "xci_name": "design_1_cavity_relocker_0_0",
         "xci_path": "ip/design_1_cavity_relocker_0_0/design_1_cavity_relocker_0_0.xci",
         "inst_hier_path": "cavity_relocker_0",
@@ -1446,8 +1446,8 @@
           "processing_system7_0/S_AXI_HP0_ACLK",
           "axi_mem_intercon/M00_ACLK",
           "axi_mem_intercon/ACLK",
-          "cavity_relocker_0/ap_clk",
-          "axis_red_pitaya_dac_0/aclk"
+          "axis_red_pitaya_dac_0/aclk",
+          "cavity_relocker_0/ap_clk"
         ]
       },
       "clk_wiz_0_clk_out2": {
