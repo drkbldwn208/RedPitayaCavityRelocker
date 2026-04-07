@@ -836,7 +836,7 @@
       },
       "cavity_relocker_0": {
         "vlnv": "xilinx.com:hls:cavity_relocker:1.0",
-        "ip_revision": "2114555360",
+        "ip_revision": "2114555369",
         "xci_name": "design_1_cavity_relocker_0_0",
         "xci_path": "ip/design_1_cavity_relocker_0_0/design_1_cavity_relocker_0_0.xci",
         "inst_hier_path": "cavity_relocker_0",
