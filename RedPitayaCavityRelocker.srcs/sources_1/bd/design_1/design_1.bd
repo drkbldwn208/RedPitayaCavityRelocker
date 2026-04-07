@@ -1439,7 +1439,6 @@
           "axis_red_pitaya_adc_0/aclk",
           "proc_sys_reset_0/slowest_sync_clk",
           "processing_system7_0/M_AXI_GP0_ACLK",
-          "axis_red_pitaya_dac_0/aclk",
           "ps7_0_axi_periph/ACLK",
           "ps7_0_axi_periph/S00_ACLK",
           "ps7_0_axi_periph/M00_ACLK",
@@ -1447,7 +1446,8 @@
           "processing_system7_0/S_AXI_HP0_ACLK",
           "axi_mem_intercon/M00_ACLK",
           "axi_mem_intercon/ACLK",
-          "cavity_relocker_0/ap_clk"
+          "cavity_relocker_0/ap_clk",
+          "axis_red_pitaya_dac_0/aclk"
         ]
       },
       "clk_wiz_0_clk_out2": {

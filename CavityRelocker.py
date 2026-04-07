@@ -19,6 +19,7 @@ sweep_buffer = allocate(shape=(32768,), dtype='i4')
 
 relocker.register_map.pdh_waveform_1 = sweep_buffer.physical_address
 relocker.register_map.pdh_waveform_2 = sweep_buffer.physical_address >> 32
+relocker.register_map.lock_voltage = 0
 
 print(f"Buffer allocated at physical address: {hex(sweep_buffer.physical_address)}")
 

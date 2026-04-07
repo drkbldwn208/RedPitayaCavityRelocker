@@ -40,13 +40,12 @@ module axis_red_pitaya_dac #
 
   always @(posedge aclk)
   begin
-    if(~locked | ~s_axis_tvalid)
+    if(~locked)
     begin
       int_dat_a_reg <= {(DAC_DATA_WIDTH){1'b0}};
       int_dat_b_reg <= {(DAC_DATA_WIDTH){1'b0}};
     end
-    else
-    begin
+    else if (s_axis_tvalid) begin
       int_dat_a_reg <= {int_dat_a_wire[DAC_DATA_WIDTH-1], ~int_dat_a_wire[DAC_DATA_WIDTH-2:0]};
       int_dat_b_reg <= {int_dat_b_wire[DAC_DATA_WIDTH-1], ~int_dat_b_wire[DAC_DATA_WIDTH-2:0]};
     end
