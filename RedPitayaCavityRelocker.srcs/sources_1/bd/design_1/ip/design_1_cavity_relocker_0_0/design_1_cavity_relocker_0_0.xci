@@ -4,7 +4,7 @@
     "xci_name": "design_1_cavity_relocker_0_0",
     "cell_name": "cavity_relocker_0",
     "component_reference": "xilinx.com:hls:cavity_relocker:1.0",
-    "ip_revision": "2114556672",
+    "ip_revision": "2114556719",
     "gen_directory": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_0",
     "parameters": {
       "component_parameters": {
@@ -28,7 +28,7 @@
         "II": [ { "value": "4", "enabled": false, "usage": "all" } ]
       },
       "model_parameters": {
-        "C_S_AXI_CONTROL_ADDR_WIDTH": [ { "value": "6", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_S_AXI_CONTROL_ADDR_WIDTH": [ { "value": "7", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_S_AXI_CONTROL_DATA_WIDTH": [ { "value": "32", "format": "long", "usage": "all" } ],
         "C_M_AXI_GMEM_ID_WIDTH": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_M_AXI_GMEM_ADDR_WIDTH": [ { "value": "64", "format": "long", "usage": "all" } ],
@@ -58,7 +58,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2114556672" } ],
+        "IPREVISION": [ { "value": "2114556719" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -69,10 +69,10 @@
     },
     "boundary": {
       "ports": {
-        "s_axi_control_ARADDR": [ { "direction": "in", "size_left": "5", "size_right": "0" } ],
+        "s_axi_control_ARADDR": [ { "direction": "in", "size_left": "6", "size_right": "0" } ],
         "s_axi_control_ARREADY": [ { "direction": "out" } ],
         "s_axi_control_ARVALID": [ { "direction": "in" } ],
-        "s_axi_control_AWADDR": [ { "direction": "in", "size_left": "5", "size_right": "0" } ],
+        "s_axi_control_AWADDR": [ { "direction": "in", "size_left": "6", "size_right": "0" } ],
         "s_axi_control_AWREADY": [ { "direction": "out" } ],
         "s_axi_control_AWVALID": [ { "direction": "in" } ],
         "s_axi_control_BREADY": [ { "direction": "in" } ],
@@ -149,7 +149,7 @@
           "mode": "slave",
           "memory_map_ref": "s_axi_control",
           "parameters": {
-            "ADDR_WIDTH": [ { "value": "6", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
+            "ADDR_WIDTH": [ { "value": "7", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
             "DATA_WIDTH": [ { "value": "32", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
             "PROTOCOL": [ { "value": "AXI4LITE", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
             "READ_WRITE_MODE": [ { "value": "READ_WRITE", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
@@ -658,6 +658,22 @@
                       "bit_offset": 0,
                       "bit_width": 32,
                       "description": "Bit 63 to 32 of pdh_waveform",
+                      "access": "write-only"
+                    }
+                  }
+                },
+                "arm_enable": {
+                  "address_offset": "60",
+                  "size": 32,
+                  "display_name": "arm_enable",
+                  "description": "Data signal of arm_enable",
+                  "access": "write-only",
+                  "reset_value": "0",
+                  "fields": {
+                    "arm_enable": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "description": "Bit 31 to 0 of arm_enable",
                       "access": "write-only"
                     }
                   }
