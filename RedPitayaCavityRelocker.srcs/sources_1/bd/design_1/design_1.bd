@@ -853,7 +853,7 @@
       },
       "cavity_relocker_0": {
         "vlnv": "xilinx.com:hls:cavity_relocker:1.0",
-        "ip_revision": "2114555486",
+        "ip_revision": "2114556441",
         "xci_name": "design_1_cavity_relocker_0_0",
         "xci_path": "ip/design_1_cavity_relocker_0_0/design_1_cavity_relocker_0_0.xci",
         "inst_hier_path": "cavity_relocker_0",
@@ -1503,8 +1503,8 @@
           "processing_system7_0/S_AXI_HP0_ACLK",
           "axi_mem_intercon/M00_ACLK",
           "axi_mem_intercon/ACLK",
-          "cavity_relocker_0/ap_clk",
-          "axis_clock_converter_0/s_axis_aclk"
+          "axis_clock_converter_0/s_axis_aclk",
+          "cavity_relocker_0/ap_clk"
         ]
       },
       "clk_wiz_0_clk_out2": {
@@ -1543,8 +1543,8 @@
           "axi_mem_intercon/S00_ARESETN",
           "axi_mem_intercon/M00_ARESETN",
           "axi_mem_intercon/ARESETN",
-          "cavity_relocker_0/ap_rst_n",
-          "axis_clock_converter_0/s_axis_aresetn"
+          "axis_clock_converter_0/s_axis_aresetn",
+          "cavity_relocker_0/ap_rst_n"
         ]
       },
       "proc_sys_reset_1_peripheral_aresetn": {
