@@ -4,7 +4,7 @@
     "xci_name": "design_1_cavity_relocker_0_0",
     "cell_name": "cavity_relocker_0",
     "component_reference": "xilinx.com:hls:cavity_relocker:1.0",
-    "ip_revision": "2114555398",
+    "ip_revision": "2114555486",
     "gen_directory": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_0",
     "parameters": {
       "component_parameters": {
@@ -58,7 +58,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2114555398" } ],
+        "IPREVISION": [ { "value": "2114555486" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
