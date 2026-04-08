@@ -29,7 +29,6 @@
           "auto_us": ""
         }
       },
-      "axis_constant_0": "",
       "axis_clock_converter_0": "",
       "proc_sys_reset_1": ""
     },
@@ -1339,107 +1338,6 @@
           }
         }
       },
-      "axis_constant_0": {
-        "vlnv": "xilinx.com:module_ref:axis_constant:1.0",
-        "ip_revision": "1",
-        "xci_name": "design_1_axis_constant_0_0",
-        "xci_path": "ip/design_1_axis_constant_0_0/design_1_axis_constant_0_0.xci",
-        "inst_hier_path": "axis_constant_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "axis_constant",
-          "boundary_crc": "0x0"
-        },
-        "interface_ports": {
-          "m_axis": {
-            "mode": "Master",
-            "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
-            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
-            "parameters": {
-              "TDATA_NUM_BYTES": {
-                "value": "4",
-                "value_src": "constant"
-              },
-              "TDEST_WIDTH": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "TID_WIDTH": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "TUSER_WIDTH": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "HAS_TREADY": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "HAS_TSTRB": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "HAS_TKEEP": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "HAS_TLAST": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "125000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_clk_wiz_0_1_clk_out1",
-                "value_src": "default_prop"
-              }
-            },
-            "port_maps": {
-              "TDATA": {
-                "physical_name": "m_axis_tdata",
-                "direction": "O",
-                "left": "31",
-                "right": "0"
-              },
-              "TVALID": {
-                "physical_name": "m_axis_tvalid",
-                "direction": "O"
-              }
-            }
-          }
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_BUSIF": {
-                "value": "m_axis",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "125000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_clk_wiz_0_1_clk_out1",
-                "value_src": "default_prop"
-              }
-            }
-          }
-        }
-      },
       "axis_clock_converter_0": {
         "vlnv": "xilinx.com:ip:axis_clock_converter:1.1",
         "ip_revision": "32",
@@ -1488,16 +1386,16 @@
           "axis_red_pitaya_dac_0/s_axis"
         ]
       },
-      "axis_constant_0_m_axis": {
-        "interface_ports": [
-          "axis_constant_0/m_axis",
-          "axis_clock_converter_0/S_AXIS"
-        ]
-      },
       "axis_red_pitaya_adc_0_m_axis": {
         "interface_ports": [
           "axis_red_pitaya_adc_0/m_axis",
           "cavity_relocker_0/adc_in"
+        ]
+      },
+      "cavity_relocker_0_dac_out": {
+        "interface_ports": [
+          "cavity_relocker_0/dac_out",
+          "axis_clock_converter_0/S_AXIS"
         ]
       },
       "cavity_relocker_0_m_axi_gmem": {
@@ -1606,8 +1504,7 @@
           "axi_mem_intercon/M00_ACLK",
           "axi_mem_intercon/ACLK",
           "cavity_relocker_0/ap_clk",
-          "axis_clock_converter_0/s_axis_aclk",
-          "axis_constant_0/clk"
+          "axis_clock_converter_0/s_axis_aclk"
         ]
       },
       "clk_wiz_0_clk_out2": {

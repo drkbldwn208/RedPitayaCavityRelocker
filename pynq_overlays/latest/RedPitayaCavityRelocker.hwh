@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Apr  8 10:10:00 2026" VIVADOVERSION="2024.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Apr  8 10:16:40 2026" VIVADOVERSION="2024.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -816,7 +816,7 @@
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="C_ACLKEN_CONV_MODE" VALUE="0"/>
-        <PARAMETER NAME="C_AXIS_SIGNAL_SET" VALUE="0b00000000000000000000000000000011"/>
+        <PARAMETER NAME="C_AXIS_SIGNAL_SET" VALUE="0b00000000000000000000000000011111"/>
         <PARAMETER NAME="C_AXIS_TDATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_AXIS_TDEST_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_AXIS_TID_WIDTH" VALUE="1"/>
@@ -829,9 +829,9 @@
         <PARAMETER NAME="ACLKEN_CONV_MODE" VALUE="0"/>
         <PARAMETER NAME="ACLK_RATIO" VALUE="1:2"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_axis_clock_converter_0_0"/>
-        <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-        <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-        <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+        <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
+        <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+        <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
         <PARAMETER NAME="IS_ACLK_ASYNC" VALUE="0"/>
         <PARAMETER NAME="SYNCHRONIZATION_STAGES" VALUE="2"/>
         <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
@@ -878,23 +878,43 @@
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_constant_0" PORT="m_axis_tdata"/>
+            <CONNECTION INSTANCE="cavity_relocker_0" PORT="dac_out_TDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="s_axis_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tkeep">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="cavity_relocker_0" PORT="dac_out_TKEEP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tlast" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="cavity_relocker_0" PORT="dac_out_TLAST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="cavity_relocker_0" PORT="dac_out_TREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="s_axis_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="cavity_relocker_0" PORT="dac_out_TSTRB"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_constant_0" PORT="m_axis_tvalid"/>
+            <CONNECTION INSTANCE="cavity_relocker_0" PORT="dac_out_TVALID"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="axis_constant_0_m_axis" NAME="S_AXIS" TYPE="SLAVE" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cavity_relocker_0_dac_out" NAME="S_AXIS" TYPE="SLAVE" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="CLK_DOMAIN" VALUE="design_1_clk_wiz_0_1_clk_out1"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
           <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
@@ -904,16 +924,20 @@
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
           <PORTMAPS>
             <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
+            <PORTMAP LOGICAL="TKEEP" PHYSICAL="s_axis_tkeep"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
+            <PORTMAP LOGICAL="TSTRB" PHYSICAL="s_axis_tstrb"/>
             <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axis_clock_converter_0_M_AXIS" NAME="M_AXIS" TYPE="MASTER" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="CLK_DOMAIN" VALUE="design_1_clk_wiz_0_1_clk_out1"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
           <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
@@ -924,51 +948,6 @@
           <PORTMAPS>
             <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
             <PORTMAP LOGICAL="TREADY" PHYSICAL="m_axis_tready"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-      </BUSINTERFACES>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/axis_constant_0" HWVERSION="1.0" INSTANCE="axis_constant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_constant" VLNV="xilinx.com:module_ref:axis_constant:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_axis_constant_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_clock_converter_0" PORT="s_axis_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_clock_converter_0" PORT="s_axis_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="axis_constant_0_m_axis" NAME="m_axis" TYPE="MASTER" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="design_1_clk_wiz_0_1_clk_out1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
             <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
           </PORTMAPS>
         </BUSINTERFACE>
@@ -1543,12 +1522,36 @@
             <CONNECTION INSTANCE="proc_sys_reset_0" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="dac_out_TDATA" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="3" NAME="dac_out_TKEEP" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="dac_out_TLAST" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" NAME="dac_out_TREADY" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="3" NAME="dac_out_TSTRB" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" NAME="dac_out_TVALID" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="31" NAME="dac_out_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_clock_converter_0" PORT="s_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="dac_out_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tkeep">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_clock_converter_0" PORT="s_axis_tkeep"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="dac_out_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_clock_converter_0" PORT="s_axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="dac_out_TREADY" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_clock_converter_0" PORT="s_axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="dac_out_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_clock_converter_0" PORT="s_axis_tstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="dac_out_TVALID" SIGIS="undef" SIGNAME="axis_clock_converter_0_s_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_clock_converter_0" PORT="s_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="interrupt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT"/>
         <PORT DIR="O" LEFT="63" NAME="m_axi_gmem_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_S00_AXI_awaddr">
           <CONNECTIONS>
@@ -1794,7 +1797,7 @@
             <PORTMAP LOGICAL="WVALID" PHYSICAL="s_axi_control_WVALID"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="__NOC__" NAME="dac_out" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cavity_relocker_0_dac_out" NAME="dac_out" TYPE="MASTER" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="CLK_DOMAIN" VALUE="design_1_clk_wiz_0_1_clk_out1"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
@@ -2506,7 +2509,6 @@
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="ACLK"/>
             <CONNECTION INSTANCE="cavity_relocker_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="axis_clock_converter_0" PORT="s_axis_aclk"/>
-            <CONNECTION INSTANCE="axis_constant_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="125000000" DIR="O" NAME="clk_out2" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out2">
