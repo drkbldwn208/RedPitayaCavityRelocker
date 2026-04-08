@@ -17,7 +17,6 @@
       "xlconstant_0": "",
       "axis_red_pitaya_adc_0": "",
       "axis_red_pitaya_dac_0": "",
-      "cavity_relocker_0": "",
       "ps7_0_axi_periph": {
         "s00_couplers": {
           "auto_pc": ""
@@ -30,7 +29,8 @@
         }
       },
       "axis_clock_converter_0": "",
-      "proc_sys_reset_1": ""
+      "proc_sys_reset_1": "",
+      "cavity_relocker_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -851,33 +851,6 @@
           }
         }
       },
-      "cavity_relocker_0": {
-        "vlnv": "xilinx.com:hls:cavity_relocker:1.0",
-        "ip_revision": "2114556757",
-        "xci_name": "design_1_cavity_relocker_0_0",
-        "xci_path": "ip/design_1_cavity_relocker_0_0/design_1_cavity_relocker_0_0.xci",
-        "inst_hier_path": "cavity_relocker_0",
-        "interface_ports": {
-          "m_axi_gmem": {
-            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
-            "mode": "Master",
-            "address_space_ref": "Data_m_axi_gmem",
-            "base_address": {
-              "minimum": "0x00000000",
-              "maximum": "0xFFFFFFFFFFFFFFFF",
-              "width": "64"
-            }
-          }
-        },
-        "addressing": {
-          "address_spaces": {
-            "Data_m_axi_gmem": {
-              "range": "16E",
-              "width": "64"
-            }
-          }
-        }
-      },
       "ps7_0_axi_periph": {
         "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
         "xci_path": "ip/design_1_ps7_0_axi_periph_0/design_1_ps7_0_axi_periph_0.xci",
@@ -1371,6 +1344,33 @@
         "xci_name": "design_1_proc_sys_reset_1_0",
         "xci_path": "ip/design_1_proc_sys_reset_1_0/design_1_proc_sys_reset_1_0.xci",
         "inst_hier_path": "proc_sys_reset_1"
+      },
+      "cavity_relocker_0": {
+        "vlnv": "xilinx.com:hls:cavity_relocker:1.0",
+        "ip_revision": "2114556757",
+        "xci_name": "design_1_cavity_relocker_0_1",
+        "xci_path": "ip/design_1_cavity_relocker_0_1/design_1_cavity_relocker_0_1.xci",
+        "inst_hier_path": "cavity_relocker_0",
+        "interface_ports": {
+          "m_axi_gmem": {
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "mode": "Master",
+            "address_space_ref": "Data_m_axi_gmem",
+            "base_address": {
+              "minimum": "0x00000000",
+              "maximum": "0xFFFFFFFFFFFFFFFF",
+              "width": "64"
+            }
+          }
+        },
+        "addressing": {
+          "address_spaces": {
+            "Data_m_axi_gmem": {
+              "range": "16E",
+              "width": "64"
+            }
+          }
+        }
       }
     },
     "interface_nets": {

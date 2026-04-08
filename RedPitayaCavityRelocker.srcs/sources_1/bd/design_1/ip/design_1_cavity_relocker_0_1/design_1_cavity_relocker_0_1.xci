@@ -1,11 +1,11 @@
 {
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
-    "xci_name": "design_1_cavity_relocker_0_0",
+    "xci_name": "design_1_cavity_relocker_0_1",
     "cell_name": "cavity_relocker_0",
     "component_reference": "xilinx.com:hls:cavity_relocker:1.0",
     "ip_revision": "2114556757",
-    "gen_directory": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_0",
+    "gen_directory": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_1",
     "parameters": {
       "component_parameters": {
         "C_M_AXI_GMEM_ENABLE_ID_PORTS": [ { "value": "true", "resolve_type": "user", "format": "bool", "usage": "all" } ],
@@ -20,7 +20,7 @@
         "C_M_AXI_GMEM_USER_VALUE": [ { "value": "0x00000000", "resolve_type": "user", "format": "bitString", "enabled": false, "usage": "all" } ],
         "C_M_AXI_GMEM_PROT_VALUE": [ { "value": "\"000\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "C_M_AXI_GMEM_CACHE_VALUE": [ { "value": "\"0011\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
-        "Component_Name": [ { "value": "design_1_cavity_relocker_0_0", "resolve_type": "user", "usage": "all" } ],
+        "Component_Name": [ { "value": "design_1_cavity_relocker_0_1", "resolve_type": "user", "usage": "all" } ],
         "clk_period": [ { "value": "8", "enabled": false, "usage": "all" } ],
         "machine": [ { "value": "64", "enabled": false, "usage": "all" } ],
         "combinational": [ { "value": "0", "enabled": false, "usage": "all" } ],
@@ -60,7 +60,7 @@
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
         "IPREVISION": [ { "value": "2114556757" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_0" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_1" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2024.1" } ],
