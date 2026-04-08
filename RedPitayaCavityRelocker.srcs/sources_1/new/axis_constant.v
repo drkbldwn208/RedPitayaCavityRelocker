@@ -5,7 +5,7 @@ module axis_constant(
     );
     
     
-    assign m_axis_tdata = 32'h0FA0_0FA0;
+    assign m_axis_tdata = 32'h1770_1770;
     assign m_axis_tvalid = 1'b1;
     
     
