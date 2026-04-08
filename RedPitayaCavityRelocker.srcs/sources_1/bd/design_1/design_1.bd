@@ -30,7 +30,9 @@
         }
       },
       "axis_constant_0": "",
-      "clk_wiz_1": ""
+      "clk_wiz_1": "",
+      "axis_clock_converter_0": "",
+      "proc_sys_reset_1": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1373,7 +1375,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "250000000",
+                "value": "125000000",
                 "value_src": "ip_prop"
               },
               "PHASE": {
@@ -1381,8 +1383,8 @@
                 "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
-                "value": "/clk_wiz_1_clk_out1",
-                "value_src": "ip_prop"
+                "value": "design_1_clk_wiz_0_1_clk_out1",
+                "value_src": "default_prop"
               }
             },
             "port_maps": {
@@ -1409,7 +1411,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "250000000",
+                "value": "125000000",
                 "value_src": "ip_prop"
               },
               "PHASE": {
@@ -1417,8 +1419,8 @@
                 "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
-                "value": "/clk_wiz_1_clk_out1",
-                "value_src": "ip_prop"
+                "value": "design_1_clk_wiz_0_1_clk_out1",
+                "value_src": "default_prop"
               }
             }
           }
@@ -1498,6 +1500,40 @@
             "value": "false"
           }
         }
+      },
+      "axis_clock_converter_0": {
+        "vlnv": "xilinx.com:ip:axis_clock_converter:1.1",
+        "ip_revision": "32",
+        "xci_name": "design_1_axis_clock_converter_0_0",
+        "xci_path": "ip/design_1_axis_clock_converter_0_0/design_1_axis_clock_converter_0_0.xci",
+        "inst_hier_path": "axis_clock_converter_0",
+        "parameters": {
+          "ACLK_RATIO": {
+            "value": "1:2"
+          },
+          "IS_ACLK_ASYNC": {
+            "value": "0"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "4"
+          }
+        },
+        "interface_ports": {
+          "S_AXIS": {
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+            "mode": "Slave",
+            "bridges": [
+              "M_AXIS"
+            ]
+          }
+        }
+      },
+      "proc_sys_reset_1": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "ip_revision": "15",
+        "xci_name": "design_1_proc_sys_reset_1_0",
+        "xci_path": "ip/design_1_proc_sys_reset_1_0/design_1_proc_sys_reset_1_0.xci",
+        "inst_hier_path": "proc_sys_reset_1"
       }
     },
     "interface_nets": {
@@ -1507,10 +1543,16 @@
           "processing_system7_0/S_AXI_HP0"
         ]
       },
+      "axis_clock_converter_0_M_AXIS": {
+        "interface_ports": [
+          "axis_clock_converter_0/M_AXIS",
+          "axis_red_pitaya_dac_0/s_axis"
+        ]
+      },
       "axis_constant_0_m_axis": {
         "interface_ports": [
           "axis_constant_0/m_axis",
-          "axis_red_pitaya_dac_0/s_axis"
+          "axis_clock_converter_0/S_AXIS"
         ]
       },
       "axis_red_pitaya_adc_0_m_axis": {
@@ -1625,7 +1667,9 @@
           "axi_mem_intercon/M00_ACLK",
           "axi_mem_intercon/ACLK",
           "cavity_relocker_0/ap_clk",
-          "clk_wiz_1/clk_in1"
+          "clk_wiz_1/clk_in1",
+          "axis_clock_converter_0/s_axis_aclk",
+          "axis_constant_0/clk"
         ]
       },
       "clk_wiz_0_clk_out2": {
@@ -1650,7 +1694,8 @@
         "ports": [
           "clk_wiz_1/clk_out1",
           "axis_red_pitaya_dac_0/aclk",
-          "axis_constant_0/clk"
+          "proc_sys_reset_1/slowest_sync_clk",
+          "axis_clock_converter_0/m_axis_aclk"
         ]
       },
       "clk_wiz_1_locked": {
@@ -1668,13 +1713,21 @@
           "axi_mem_intercon/S00_ARESETN",
           "axi_mem_intercon/M00_ARESETN",
           "axi_mem_intercon/ARESETN",
-          "cavity_relocker_0/ap_rst_n"
+          "cavity_relocker_0/ap_rst_n",
+          "axis_clock_converter_0/s_axis_aresetn"
+        ]
+      },
+      "proc_sys_reset_1_peripheral_aresetn": {
+        "ports": [
+          "proc_sys_reset_1/peripheral_aresetn",
+          "axis_clock_converter_0/m_axis_aresetn"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
         "ports": [
           "processing_system7_0/FCLK_RESET0_N",
-          "proc_sys_reset_0/ext_reset_in"
+          "proc_sys_reset_0/ext_reset_in",
+          "proc_sys_reset_1/ext_reset_in"
         ]
       }
     },
