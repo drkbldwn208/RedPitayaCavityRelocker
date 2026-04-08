@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.999997",
-   "Default View_TopLeft":"300,-331",
+   "Default View_ScaleFactor":"0.870548",
+   "Default View_TopLeft":"138,-409",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.7.1 2023-07-26 3bc4126617 VDI=43 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
@@ -29,36 +29,34 @@ preplace inst cavity_relocker_0 -pg 1 -lvl 4 -x 1020 -y -130 -defaultsOSRD
 preplace inst ps7_0_axi_periph -pg 1 -lvl 6 -x 1740 -y -1250 -defaultsOSRD
 preplace inst axi_mem_intercon -pg 1 -lvl 6 -x 1740 -y -990 -defaultsOSRD
 preplace inst axis_constant_0 -pg 1 -lvl 4 -x 1020 -y 30 -defaultsOSRD
-preplace inst clk_wiz_1 -pg 1 -lvl 4 -x 1020 -y 140 -defaultsOSRD
 preplace inst axis_clock_converter_0 -pg 1 -lvl 5 -x 1440 -y 240 -defaultsOSRD
 preplace inst proc_sys_reset_1 -pg 1 -lvl 4 -x 1020 -y 290 -defaultsOSRD
 preplace netloc adc_clk_n_i_1 1 0 1 -290 -80n
 preplace netloc adc_clk_p_i_1 1 0 1 -280 -510n
 preplace netloc adc_dat_a_i_1 1 0 3 NJ -550 NJ -550 350
 preplace netloc adc_dat_b_i_1 1 0 3 NJ -530 NJ -530 250
-preplace netloc axis_red_pitaya_adc_0_adc_csn 1 3 4 720J -680 N -680 N -680 1960
+preplace netloc axis_red_pitaya_adc_0_adc_csn 1 3 4 760J -680 N -680 N -680 1960
 preplace netloc axis_red_pitaya_dac_0_dac_clk 1 6 1 1890 0n
 preplace netloc axis_red_pitaya_dac_0_dac_dat 1 6 1 N 80
 preplace netloc axis_red_pitaya_dac_0_dac_rst 1 6 1 1910 -610n
 preplace netloc axis_red_pitaya_dac_0_dac_sel 1 6 1 1930 -590n
 preplace netloc axis_red_pitaya_dac_0_dac_wrt 1 6 1 1950 -570n
-preplace netloc clk_wiz_0_clk_out1 1 1 5 N -20 340J -410 760 -690 1300 -950 1570
-preplace netloc clk_wiz_0_clk_out2 1 1 5 -10J 60 NJ 60 770J -40 N -40 1590
-preplace netloc clk_wiz_0_clk_out3 1 1 5 -30 70 NJ 70 780J -30 NJ -30 1570
-preplace netloc clk_wiz_0_locked 1 1 2 -20 -260 NJ
-preplace netloc clk_wiz_1_clk_out1 1 3 3 800 -220 1260 20 N
-preplace netloc clk_wiz_1_locked 1 4 2 1280 80 N
-preplace netloc proc_sys_reset_0_peripheral_aresetn 1 3 3 750 -230 1310 -930 1590
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 2 3 360 -400 740J -400 1240
+preplace netloc clk_wiz_0_clk_out1 1 1 5 N -30 340J -410 790 -690 1290 -950 1570
+preplace netloc clk_wiz_0_clk_out2 1 1 5 0J 60 NJ 60 800J -30 N -30 1570
+preplace netloc clk_wiz_0_clk_out3 1 1 5 -10 90 NJ 90 NJ 90 NJ 90 1570
+preplace netloc clk_wiz_0_locked 1 1 5 -20 100 360J 100 N 100 N 100 1590
+preplace netloc clk_wiz_1_clk_out1 1 1 5 -30 110 N 110 740 110 1300 20 N
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 3 3 780 -220 1310 -930 1580
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 2 3 360 -400 750J -400 1240
 preplace netloc proc_sys_reset_1_peripheral_aresetn 1 4 1 1310 240n
 preplace netloc axi_mem_intercon_M00_AXI 1 3 4 800 -1110 NJ -1110 N -1110 1890
-preplace netloc axis_red_pitaya_adc_0_m_axis 1 3 1 730 -140n
+preplace netloc axis_red_pitaya_adc_0_m_axis 1 3 1 770 -140n
 preplace netloc cavity_relocker_0_m_axi_gmem 1 4 2 1250 -1050 N
 preplace netloc processing_system7_0_DDR 1 4 3 N -620 N -620 1940
 preplace netloc processing_system7_0_FIXED_IO 1 4 3 N -600 N -600 1920
 preplace netloc processing_system7_0_M_AXI_GP0 1 4 2 1240 -1310 N
-preplace netloc ps7_0_axi_periph_M00_AXI 1 3 4 790 -240 NJ -240 N -240 1900
-preplace netloc axis_constant_0_m_axis 1 4 1 1270 30n
+preplace netloc ps7_0_axi_periph_M00_AXI 1 3 4 800 -230 NJ -230 N -230 1900
+preplace netloc axis_constant_0_m_axis 1 4 1 1240 30n
 preplace netloc axis_clock_converter_0_M_AXIS 1 5 1 1580 0n
 levelinfo -pg 1 -310 -150 170 540 1020 1440 1740 1980
 pagesize -pg 1 -db -bbox -sgen -490 -1370 2150 390
