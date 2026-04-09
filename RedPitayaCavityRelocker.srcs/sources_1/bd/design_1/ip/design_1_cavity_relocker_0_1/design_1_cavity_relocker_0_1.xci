@@ -4,7 +4,7 @@
     "xci_name": "design_1_cavity_relocker_0_1",
     "cell_name": "cavity_relocker_0",
     "component_reference": "xilinx.com:hls:cavity_relocker:1.0",
-    "ip_revision": "2114557990",
+    "ip_revision": "2114558012",
     "gen_directory": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_1",
     "parameters": {
       "component_parameters": {
@@ -58,7 +58,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2114557990" } ],
+        "IPREVISION": [ { "value": "2114558012" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_1" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -674,6 +674,22 @@
                       "bit_offset": 0,
                       "bit_width": 32,
                       "description": "Bit 31 to 0 of arm_enable",
+                      "access": "write-only"
+                    }
+                  }
+                },
+                "sideband_offset": {
+                  "address_offset": "68",
+                  "size": 32,
+                  "display_name": "sideband_offset",
+                  "description": "Data signal of sideband_offset",
+                  "access": "write-only",
+                  "reset_value": "0",
+                  "fields": {
+                    "sideband_offset": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "description": "Bit 31 to 0 of sideband_offset",
                       "access": "write-only"
                     }
                   }
