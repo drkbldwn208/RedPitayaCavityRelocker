@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Apr 15 12:28:16 2026" VIVADOVERSION="2024.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Apr 15 13:19:55 2026" VIVADOVERSION="2024.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -1107,7 +1107,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="2114566647" FULLNAME="/cavity_relocker_0" HWVERSION="1.0" INSTANCE="cavity_relocker_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cavity_relocker" VLNV="xilinx.com:hls:cavity_relocker:1.0">
+    <MODULE COREREVISION="2114566697" FULLNAME="/cavity_relocker_0" HWVERSION="1.0" INSTANCE="cavity_relocker_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cavity_relocker" VLNV="xilinx.com:hls:cavity_relocker:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_control" NAME="Reg" RANGE="65536" USAGE="register">
@@ -1907,6 +1907,29 @@
             <PORTMAP LOGICAL="WVALID" PHYSICAL="s_axi_control_WVALID"/>
           </PORTMAPS>
         </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="cavity_relocker_0_dac_out" NAME="dac_out" TYPE="MASTER" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="design_1_clk_wiz_0_1_clk_out1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="dac_out_TDATA"/>
+            <PORTMAP LOGICAL="TKEEP" PHYSICAL="dac_out_TKEEP"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="dac_out_TLAST"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="dac_out_TREADY"/>
+            <PORTMAP LOGICAL="TSTRB" PHYSICAL="dac_out_TSTRB"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="dac_out_TVALID"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="cavity_relocker_0_m_axi_gmem" DATAWIDTH="32" NAME="m_axi_gmem" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="ADDR_WIDTH" VALUE="64"/>
           <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
@@ -1982,29 +2005,6 @@
           <PORTMAPS>
             <PORTMAP LOGICAL="TDATA" PHYSICAL="adc_in_TDATA"/>
             <PORTMAP LOGICAL="TVALID" PHYSICAL="adc_in_TVALID"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cavity_relocker_0_dac_out" NAME="dac_out" TYPE="MASTER" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="design_1_clk_wiz_0_1_clk_out1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="dac_out_TDATA"/>
-            <PORTMAP LOGICAL="TKEEP" PHYSICAL="dac_out_TKEEP"/>
-            <PORTMAP LOGICAL="TLAST" PHYSICAL="dac_out_TLAST"/>
-            <PORTMAP LOGICAL="TREADY" PHYSICAL="dac_out_TREADY"/>
-            <PORTMAP LOGICAL="TSTRB" PHYSICAL="dac_out_TSTRB"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="dac_out_TVALID"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
