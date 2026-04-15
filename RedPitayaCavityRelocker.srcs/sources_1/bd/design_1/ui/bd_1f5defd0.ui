@@ -51,7 +51,7 @@ preplace netloc processing_system7_0_FCLK_RESET0_N 1 2 3 390 -200 790J -240 1250
 preplace netloc axi_mem_intercon_M00_AXI 1 3 4 810 -680 NJ -680 N -680 1930
 preplace netloc axis_clock_converter_0_M_AXIS 1 5 1 1600 0n
 preplace netloc axis_red_pitaya_adc_0_m_axis 1 3 1 780 -160n
-preplace netloc cavity_relocker_0_dac_out 1 4 1 1270 -170n
+preplace netloc cavity_relocker_0_dac_out 1 4 1 1250 -150n
 preplace netloc cavity_relocker_0_m_axi_gmem 1 4 2 1260 -1050 NJ
 preplace netloc processing_system7_0_DDR 1 4 3 N -620 N -620 1980
 preplace netloc processing_system7_0_FIXED_IO 1 4 3 N -600 N -600 1960
