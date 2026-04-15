@@ -4,7 +4,7 @@
     "xci_name": "design_1_cavity_relocker_0_1",
     "cell_name": "cavity_relocker_0",
     "component_reference": "xilinx.com:hls:cavity_relocker:1.0",
-    "ip_revision": "2114558030",
+    "ip_revision": "2114566647",
     "gen_directory": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_1",
     "parameters": {
       "component_parameters": {
@@ -58,7 +58,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2114558030" } ],
+        "IPREVISION": [ { "value": "2114566647" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_1" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -89,12 +89,6 @@
         "ap_clk": [ { "direction": "in" } ],
         "ap_rst_n": [ { "direction": "in" } ],
         "interrupt": [ { "direction": "out" } ],
-        "dac_out_TDATA": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
-        "dac_out_TKEEP": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
-        "dac_out_TLAST": [ { "direction": "out", "size_left": "0", "size_right": "0" } ],
-        "dac_out_TREADY": [ { "direction": "in" } ],
-        "dac_out_TSTRB": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
-        "dac_out_TVALID": [ { "direction": "out" } ],
         "m_axi_gmem_ARADDR": [ { "direction": "out", "size_left": "63", "size_right": "0" } ],
         "m_axi_gmem_ARBURST": [ { "direction": "out", "size_left": "1", "size_right": "0" } ],
         "m_axi_gmem_ARCACHE": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
@@ -140,7 +134,13 @@
         "adc_in_TLAST": [ { "direction": "in", "size_left": "0", "size_right": "0", "driver_value": "0" } ],
         "adc_in_TREADY": [ { "direction": "out" } ],
         "adc_in_TSTRB": [ { "direction": "in", "size_left": "3", "size_right": "0", "driver_value": "15" } ],
-        "adc_in_TVALID": [ { "direction": "in" } ]
+        "adc_in_TVALID": [ { "direction": "in" } ],
+        "dac_out_TDATA": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
+        "dac_out_TKEEP": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
+        "dac_out_TLAST": [ { "direction": "out", "size_left": "0", "size_right": "0" } ],
+        "dac_out_TREADY": [ { "direction": "in" } ],
+        "dac_out_TSTRB": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
+        "dac_out_TVALID": [ { "direction": "out" } ]
       },
       "interfaces": {
         "s_axi_control": {
@@ -206,7 +206,7 @@
           "abstraction_type": "xilinx.com:signal:clock_rtl:1.0",
           "mode": "slave",
           "parameters": {
-            "ASSOCIATED_BUSIF": [ { "value": "s_axi_control:dac_out:m_axi_gmem:adc_in", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
+            "ASSOCIATED_BUSIF": [ { "value": "s_axi_control:m_axi_gmem:adc_in:dac_out", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
             "ASSOCIATED_RESET": [ { "value": "ap_rst_n", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
             "FREQ_HZ": [ { "value": "125000000", "value_src": "ip_propagated", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "FREQ_TOLERANCE_HZ": [ { "value": "0", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
@@ -241,34 +241,6 @@
           },
           "port_maps": {
             "INTERRUPT": [ { "physical_name": "interrupt" } ]
-          }
-        },
-        "dac_out": {
-          "vlnv": "xilinx.com:interface:axis:1.0",
-          "abstraction_type": "xilinx.com:interface:axis_rtl:1.0",
-          "mode": "master",
-          "parameters": {
-            "TUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
-            "TDATA_NUM_BYTES": [ { "value": "4", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "TDEST_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "TID_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "HAS_TREADY": [ { "value": "1", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "HAS_TSTRB": [ { "value": "1", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "HAS_TKEEP": [ { "value": "1", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "HAS_TLAST": [ { "value": "1", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "FREQ_HZ": [ { "value": "125000000", "value_src": "ip_propagated", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "PHASE": [ { "value": "0.0", "value_src": "ip_propagated", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
-            "CLK_DOMAIN": [ { "value": "design_1_clk_wiz_0_1_clk_out1", "value_src": "default_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "LAYERED_METADATA": [ { "value": "undef", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
-          },
-          "port_maps": {
-            "TDATA": [ { "physical_name": "dac_out_TDATA" } ],
-            "TKEEP": [ { "physical_name": "dac_out_TKEEP" } ],
-            "TLAST": [ { "physical_name": "dac_out_TLAST" } ],
-            "TREADY": [ { "physical_name": "dac_out_TREADY" } ],
-            "TSTRB": [ { "physical_name": "dac_out_TSTRB" } ],
-            "TVALID": [ { "physical_name": "dac_out_TVALID" } ]
           }
         },
         "m_axi_gmem": {
@@ -380,6 +352,34 @@
             "TREADY": [ { "physical_name": "adc_in_TREADY" } ],
             "TSTRB": [ { "physical_name": "adc_in_TSTRB" } ],
             "TVALID": [ { "physical_name": "adc_in_TVALID" } ]
+          }
+        },
+        "dac_out": {
+          "vlnv": "xilinx.com:interface:axis:1.0",
+          "abstraction_type": "xilinx.com:interface:axis_rtl:1.0",
+          "mode": "master",
+          "parameters": {
+            "TUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
+            "TDATA_NUM_BYTES": [ { "value": "4", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "TDEST_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "TID_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TREADY": [ { "value": "1", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TSTRB": [ { "value": "1", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TKEEP": [ { "value": "1", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TLAST": [ { "value": "1", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "125000000", "value_src": "ip_propagated", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PHASE": [ { "value": "0.0", "value_src": "ip_propagated", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
+            "CLK_DOMAIN": [ { "value": "design_1_clk_wiz_0_1_clk_out1", "value_src": "default_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "LAYERED_METADATA": [ { "value": "undef", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "TDATA": [ { "physical_name": "dac_out_TDATA" } ],
+            "TKEEP": [ { "physical_name": "dac_out_TKEEP" } ],
+            "TLAST": [ { "physical_name": "dac_out_TLAST" } ],
+            "TREADY": [ { "physical_name": "dac_out_TREADY" } ],
+            "TSTRB": [ { "physical_name": "dac_out_TSTRB" } ],
+            "TVALID": [ { "physical_name": "dac_out_TVALID" } ]
           }
         }
       },
@@ -691,6 +691,60 @@
                       "bit_width": 32,
                       "description": "Bit 31 to 0 of sideband_offset",
                       "access": "write-only"
+                    }
+                  }
+                },
+                "pi_rail_interrupt_i": {
+                  "address_offset": "76",
+                  "size": 32,
+                  "display_name": "pi_rail_interrupt_i",
+                  "description": "Data signal of pi_rail_interrupt_i",
+                  "access": "write-only",
+                  "reset_value": "0",
+                  "fields": {
+                    "pi_rail_interrupt_i": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "description": "Bit 31 to 0 of pi_rail_interrupt_i",
+                      "access": "write-only"
+                    }
+                  }
+                },
+                "pi_rail_interrupt_o": {
+                  "address_offset": "84",
+                  "size": 32,
+                  "display_name": "pi_rail_interrupt_o",
+                  "description": "Data signal of pi_rail_interrupt_o",
+                  "access": "read-only",
+                  "reset_value": "0",
+                  "fields": {
+                    "pi_rail_interrupt_o": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "description": "Bit 31 to 0 of pi_rail_interrupt_o",
+                      "access": "read-only"
+                    }
+                  }
+                },
+                "pi_rail_interrupt_o_ctrl": {
+                  "address_offset": "88",
+                  "size": 32,
+                  "display_name": "pi_rail_interrupt_o_ctrl",
+                  "description": "Control signal of pi_rail_interrupt_o",
+                  "access": "read-only",
+                  "reset_value": "0",
+                  "fields": {
+                    "pi_rail_interrupt_o_ap_vld": {
+                      "bit_offset": 0,
+                      "bit_width": 1,
+                      "description": "Control signal pi_rail_interrupt_o_ap_vld",
+                      "access": "read-only"
+                    },
+                    "RESERVED": {
+                      "bit_offset": 1,
+                      "bit_width": 31,
+                      "description": "Reserved.  0s on read.",
+                      "access": "read-only"
                     }
                   }
                 }
