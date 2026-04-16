@@ -21,7 +21,7 @@ enum State {D, H, S, W, R, I};
 #endif
 
 #ifndef HOLD_TIMEOUT_CYCLES_SHIFT
-    #define HOLD_TIMEOUT_CYCLES_SHIFT 24
+    #define HOLD_TIMEOUT_CYCLES_SHIFT 25
 #endif
 
 #ifndef HOLD_TIMEOUT_CYCLES
@@ -29,7 +29,7 @@ enum State {D, H, S, W, R, I};
 #endif
 
 #ifndef HOLD_TIMEOUT_PAUSE_CYCLES
-    #define HOLD_TIMEOUT_PAUSE_CYCLES (1 << 23)
+    #define HOLD_TIMEOUT_PAUSE_CYCLES (1 << 24)
 #endif
 
 #ifndef SWEEP_TIMEOUT_CYCLES_SHIFT
@@ -69,7 +69,7 @@ enum State {D, H, S, W, R, I};
 #endif 
 
 #ifndef REENGAGE_DWELL_CYCLES_SHIFT
-    #define REENGAGE_DWELL_CYCLES_SHIFT 20
+    #define REENGAGE_DWELL_CYCLES_SHIFT 21
 #endif
 
 #ifndef REENGAGE_DWELL_CYCLES
