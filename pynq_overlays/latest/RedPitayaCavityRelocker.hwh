@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Apr 15 19:01:58 2026" VIVADOVERSION="2024.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Apr 16 10:49:47 2026" VIVADOVERSION="2024.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -1107,7 +1107,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="2114567041" FULLNAME="/cavity_relocker_0" HWVERSION="1.0" INSTANCE="cavity_relocker_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cavity_relocker" VLNV="xilinx.com:hls:cavity_relocker:1.0">
+    <MODULE COREREVISION="2114567989" FULLNAME="/cavity_relocker_0" HWVERSION="1.0" INSTANCE="cavity_relocker_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cavity_relocker" VLNV="xilinx.com:hls:cavity_relocker:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_control" NAME="Reg" RANGE="65536" USAGE="register">
@@ -1492,29 +1492,9 @@
                 </FIELD>
               </FIELDS>
             </REGISTER>
-            <REGISTER NAME="sideband_offset">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of sideband_offset"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="68"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="sideband_offset">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of sideband_offset"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
             <REGISTER NAME="pi_rail_interrupt_i">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of pi_rail_interrupt_i"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="76"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="68"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="write-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -1534,7 +1514,7 @@
             </REGISTER>
             <REGISTER NAME="pi_rail_interrupt_o">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of pi_rail_interrupt_o"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="84"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="76"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -1554,7 +1534,7 @@
             </REGISTER>
             <REGISTER NAME="pi_rail_interrupt_o_ctrl">
               <PROPERTY NAME="DESCRIPTION" VALUE="Control signal of pi_rail_interrupt_o"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="88"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="80"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -1562,6 +1542,96 @@
               <FIELDS>
                 <FIELD NAME="pi_rail_interrupt_o_ap_vld">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Control signal pi_rail_interrupt_o_ap_vld"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
+                </FIELD>
+                <FIELD NAME="RESERVED">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Reserved.  0s on read."/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="1"/>
+                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="1"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="31"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="sideband_offset">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of sideband_offset"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="84"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="sideband_offset">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of sideband_offset"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="servo_offset">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of servo_offset"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="92"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="servo_offset">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of servo_offset"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="offset_estimate_out">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of offset_estimate_out"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="100"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="offset_estimate_out">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of offset_estimate_out"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="offset_estimate_out_ctrl">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Control signal of offset_estimate_out"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="104"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="offset_estimate_out_ap_vld">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Control signal offset_estimate_out_ap_vld"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>

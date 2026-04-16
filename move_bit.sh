@@ -18,13 +18,19 @@ inotifywait -m -r --exclude "pynq_overlays" -e close_write --format '%w%f' . | w
 
 
 		LATEST_HWH=$(find . -path "./pynq_overlays" -prune -false -o -type f -name "*.hwh" -printf '%T+ %p\n' | sort -r | head -n 1 | cut -d' ' -f2-)
+		LATEST_CPP="/home/levlabcukomen/Desktop/VitisProjects/CavityRelock/hls_cavity_relock/relock.cpp"
+		LATEST_HEADER="/home/levlabcukomen/Desktop/VitisProjects/CavityRelock/hls_cavity_relock/relock.h"
 
 		if [ -f "$LATEST_HWH" ]; then
 			cp "$NEW_BIT" "$BUILD_DIR/${PROJECT_NAME}.bit"
 			cp "$LATEST_HWH" "$BUILD_DIR/${PROJECT_NAME}.hwh"
+			cp "$LATEST_CPP" "$BUILD_DIR/${PROJECT_NAME}.cpp"
+			cp "$LATEST_HEADER" "$BUILD_DIR/${PROJECT_NAME}.h"
 
 			cp "$NEW_BIT" "$LATEST_DIR/${PROJECT_NAME}.bit"
 			cp "$LATEST_HWH" "$LATEST_DIR/${PROJECT_NAME}.hwh"
+			cp "$LATEST_CPP" "$LATEST_DIR/${PROJECT_NAME}.cpp"
+			cp "$LATEST_HEADER" "$LATEST_DIR/${PROJECT_NAME}.h"
 
 
 			echo "---------------------------------------------------------------"

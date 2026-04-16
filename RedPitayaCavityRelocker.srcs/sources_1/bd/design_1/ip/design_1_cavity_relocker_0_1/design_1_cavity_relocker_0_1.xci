@@ -4,7 +4,7 @@
     "xci_name": "design_1_cavity_relocker_0_1",
     "cell_name": "cavity_relocker_0",
     "component_reference": "xilinx.com:hls:cavity_relocker:1.0",
-    "ip_revision": "2114567041",
+    "ip_revision": "2114567989",
     "gen_directory": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_1",
     "parameters": {
       "component_parameters": {
@@ -58,7 +58,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2114567041" } ],
+        "IPREVISION": [ { "value": "2114567989" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_1" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -678,24 +678,8 @@
                     }
                   }
                 },
-                "sideband_offset": {
-                  "address_offset": "68",
-                  "size": 32,
-                  "display_name": "sideband_offset",
-                  "description": "Data signal of sideband_offset",
-                  "access": "write-only",
-                  "reset_value": "0",
-                  "fields": {
-                    "sideband_offset": {
-                      "bit_offset": 0,
-                      "bit_width": 32,
-                      "description": "Bit 31 to 0 of sideband_offset",
-                      "access": "write-only"
-                    }
-                  }
-                },
                 "pi_rail_interrupt_i": {
-                  "address_offset": "76",
+                  "address_offset": "68",
                   "size": 32,
                   "display_name": "pi_rail_interrupt_i",
                   "description": "Data signal of pi_rail_interrupt_i",
@@ -711,7 +695,7 @@
                   }
                 },
                 "pi_rail_interrupt_o": {
-                  "address_offset": "84",
+                  "address_offset": "76",
                   "size": 32,
                   "display_name": "pi_rail_interrupt_o",
                   "description": "Data signal of pi_rail_interrupt_o",
@@ -727,7 +711,7 @@
                   }
                 },
                 "pi_rail_interrupt_o_ctrl": {
-                  "address_offset": "88",
+                  "address_offset": "80",
                   "size": 32,
                   "display_name": "pi_rail_interrupt_o_ctrl",
                   "description": "Control signal of pi_rail_interrupt_o",
@@ -738,6 +722,76 @@
                       "bit_offset": 0,
                       "bit_width": 1,
                       "description": "Control signal pi_rail_interrupt_o_ap_vld",
+                      "access": "read-only"
+                    },
+                    "RESERVED": {
+                      "bit_offset": 1,
+                      "bit_width": 31,
+                      "description": "Reserved.  0s on read.",
+                      "access": "read-only"
+                    }
+                  }
+                },
+                "sideband_offset": {
+                  "address_offset": "84",
+                  "size": 32,
+                  "display_name": "sideband_offset",
+                  "description": "Data signal of sideband_offset",
+                  "access": "write-only",
+                  "reset_value": "0",
+                  "fields": {
+                    "sideband_offset": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "description": "Bit 31 to 0 of sideband_offset",
+                      "access": "write-only"
+                    }
+                  }
+                },
+                "servo_offset": {
+                  "address_offset": "92",
+                  "size": 32,
+                  "display_name": "servo_offset",
+                  "description": "Data signal of servo_offset",
+                  "access": "write-only",
+                  "reset_value": "0",
+                  "fields": {
+                    "servo_offset": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "description": "Bit 31 to 0 of servo_offset",
+                      "access": "write-only"
+                    }
+                  }
+                },
+                "offset_estimate_out": {
+                  "address_offset": "100",
+                  "size": 32,
+                  "display_name": "offset_estimate_out",
+                  "description": "Data signal of offset_estimate_out",
+                  "access": "read-only",
+                  "reset_value": "0",
+                  "fields": {
+                    "offset_estimate_out": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "description": "Bit 31 to 0 of offset_estimate_out",
+                      "access": "read-only"
+                    }
+                  }
+                },
+                "offset_estimate_out_ctrl": {
+                  "address_offset": "104",
+                  "size": 32,
+                  "display_name": "offset_estimate_out_ctrl",
+                  "description": "Control signal of offset_estimate_out",
+                  "access": "read-only",
+                  "reset_value": "0",
+                  "fields": {
+                    "offset_estimate_out_ap_vld": {
+                      "bit_offset": 0,
+                      "bit_width": 1,
+                      "description": "Control signal offset_estimate_out_ap_vld",
                       "access": "read-only"
                     },
                     "RESERVED": {
