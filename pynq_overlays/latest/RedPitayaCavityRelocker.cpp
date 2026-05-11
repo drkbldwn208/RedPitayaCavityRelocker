@@ -12,7 +12,8 @@ void cavity_relocker(
     volatile int *pi_rail_interrupt,
     int sideband_offset,
     int servo_offset,
-    volatile int *offset_estimate_out
+    volatile int *offset_estimate_out,
+    int *unlock_status_flag
 ) {
     #pragma HLS PIPELINE II=4
     #pragma HLS INTERFACE axis port=adc_in
@@ -25,6 +26,7 @@ void cavity_relocker(
     #pragma HLS INTERFACE s_axilite port=servo_offset
     #pragma HLS INTERFACE s_axilite port=pi_rail_interrupt
     #pragma HLS INTERFACE s_axilite port=offset_estimate_out
+    #pragma HLS INTERFACE s_axilite port=unlock_status_flag
     #pragma HLS INTERFACE s_axilite port=return
     #pragma HLS INTERFACE m_axi port=pdh_waveform depth=32768 offset=slave bundle=gmem
 
@@ -76,6 +78,7 @@ void cavity_relocker(
             } else {
                 int offset_error = rolling_avg - adc_offset_estimate;
                 adc_offset_estimate = adc_offset_estimate + (offset_error >> EMA_SHIFT); 
+                *unlock_status_flag = 0;
             }
             if (std::abs(rolling_avg) > 6000) {
                 rail_detect_counter++;                
@@ -129,6 +132,7 @@ void cavity_relocker(
                 timer = 0;
                 held_vco_voltage = out_vco; 
                 *ps_status_flag = 0;
+                *unlock_status_flag = 1;
                 hold_ramp_accum = (long long)held_vco_voltage << HOLD_TIMEOUT_CYCLES_SHIFT;
                 hold_ramp_step = 8192 + held_vco_voltage;
             }

@@ -4,7 +4,7 @@
     "xci_name": "design_1_cavity_relocker_0_1",
     "cell_name": "cavity_relocker_0",
     "component_reference": "xilinx.com:hls:cavity_relocker:1.0",
-    "ip_revision": "2114568234",
+    "ip_revision": "2114604017",
     "gen_directory": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_1",
     "parameters": {
       "component_parameters": {
@@ -58,7 +58,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2114568234" } ],
+        "IPREVISION": [ { "value": "2114604017" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../RedPitayaCavityRelocker.gen/sources_1/bd/design_1/ip/design_1_cavity_relocker_0_1" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -175,8 +175,8 @@
             "MAX_BURST_LENGTH": [ { "value": "1", "value_src": "auto", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "PHASE": [ { "value": "0.0", "value_src": "ip_propagated", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
             "CLK_DOMAIN": [ { "value": "design_1_clk_wiz_0_1_clk_out1", "value_src": "default_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "NUM_READ_THREADS": [ { "value": "4", "value_src": "constant_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "NUM_WRITE_THREADS": [ { "value": "4", "value_src": "constant_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_READ_THREADS": [ { "value": "1", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_WRITE_THREADS": [ { "value": "1", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "RUSER_BITS_PER_BYTE": [ { "value": "0", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "WUSER_BITS_PER_BYTE": [ { "value": "0", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
@@ -792,6 +792,44 @@
                       "bit_offset": 0,
                       "bit_width": 1,
                       "description": "Control signal offset_estimate_out_ap_vld",
+                      "access": "read-only"
+                    },
+                    "RESERVED": {
+                      "bit_offset": 1,
+                      "bit_width": 31,
+                      "description": "Reserved.  0s on read.",
+                      "access": "read-only"
+                    }
+                  }
+                },
+                "unlock_status_flag": {
+                  "address_offset": "116",
+                  "size": 32,
+                  "display_name": "unlock_status_flag",
+                  "description": "Data signal of unlock_status_flag",
+                  "access": "read-only",
+                  "reset_value": "0",
+                  "fields": {
+                    "unlock_status_flag": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "description": "Bit 31 to 0 of unlock_status_flag",
+                      "access": "read-only"
+                    }
+                  }
+                },
+                "unlock_status_flag_ctrl": {
+                  "address_offset": "120",
+                  "size": 32,
+                  "display_name": "unlock_status_flag_ctrl",
+                  "description": "Control signal of unlock_status_flag",
+                  "access": "read-only",
+                  "reset_value": "0",
+                  "fields": {
+                    "unlock_status_flag_ap_vld": {
+                      "bit_offset": 0,
+                      "bit_width": 1,
+                      "description": "Control signal unlock_status_flag_ap_vld",
                       "access": "read-only"
                     },
                     "RESERVED": {

@@ -111,3 +111,39 @@ set_property PACKAGE_PIN N16 [get_ports dac_sel_o]
 set_property PACKAGE_PIN M18 [get_ports dac_clk_o]
 set_property PACKAGE_PIN N15 [get_ports dac_rst_o]
 
+#PDM DAC
+
+set_property IOSTANDARD LVCMOS18 [get_ports {pdm_0[*]}]
+set_property SLEW FAST [get_ports {pdm_0[*]}]
+set_property DRIVE 12 [get_ports {pdm_0[*]}]
+# set_property IOB TRUE [get_ports {pdm_0 [*]}]
+
+set_property PACKAGE_PIN T10 [get_ports {pdm_0[0]}]
+set_property PACKAGE_PIN T11 [get_ports {pdm_0[1]}]
+set_property PACKAGE_PIN P15 [get_ports {pdm_0[2]}]
+set_property PACKAGE_PIN U13 [get_ports {pdm_0[3]}]
+
+### XADC
+
+set_property IOSTANDARD LVCMOS33 [get_ports vp_in_0]
+set_property IOSTANDARD LVCMOS33 [get_ports vn_in_1]
+set_property IOSTANDARD LVCMOS33 [get_ports vauxp0_0]
+set_property IOSTANDARD LVCMOS33 [get_ports vauxn0_0]
+set_property IOSTANDARD LVCMOS33 [get_ports vauxp1_0]
+set_property IOSTANDARD LVCMOS33 [get_ports vauxn1_0]
+set_property IOSTANDARD LVCMOS33 [get_ports vauxp8_0]
+set_property IOSTANDARD LVCMOS33 [get_ports vauxn8_0]
+set_property IOSTANDARD LVCMOS33 [get_ports vauxp9_0]
+set_property IOSTANDARD LVCMOS33 [get_ports vauxn9_0]
+
+set_property PACKAGE_PIN K9  [get_ports vp_in_0]
+set_property PACKAGE_PIN L10 [get_ports vn_in_1]
+set_property PACKAGE_PIN C20 [get_ports vauxp0_0]
+set_property PACKAGE_PIN B20 [get_ports vauxn0_0]
+set_property PACKAGE_PIN E17 [get_ports vauxp1_0]
+set_property PACKAGE_PIN D18 [get_ports vauxn1_0]
+set_property PACKAGE_PIN B19 [get_ports vauxp8_0]
+set_property PACKAGE_PIN A20 [get_ports vauxn8_0]
+set_property PACKAGE_PIN E18 [get_ports vauxp9_0]
+set_property PACKAGE_PIN E19 [get_ports vauxn9_0]
+
